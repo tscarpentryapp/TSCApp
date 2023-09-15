@@ -122,8 +122,8 @@ export default function Cover() {
         }
         .MotionDiv p
         {
-          text-align: center;
           color: var(--cover-color);
+          text-align: center;
         }
         .MotionContainer
         {
