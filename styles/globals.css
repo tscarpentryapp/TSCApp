@@ -9,6 +9,7 @@
   --background-contrast: #ffffff;
 
   --tsc-color: #004ba6;
+  --cover-color: #004ba6;
   --velier-color: rgb(0, 101, 255); 
   --grey-color: #e6e6e67c;
   --grey-full: #e6e6e6;
@@ -35,8 +36,10 @@
     --background-end-rgb: #1e1e1e;
     --background-contrast: #000000;
 
-  --grey-color: #3e3e3e7c;
-  --grey-full: #3e3e3e;
+    --cover-color: #fff;
+
+    --grey-color: #3e3e3e7c;
+    --grey-full: #3e3e3e;
   
   --color-map: invert(94%);
   

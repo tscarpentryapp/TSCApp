@@ -42,7 +42,7 @@ export default function Cover() {
               {words[index]}
               </motion.div>
             </div>
-            <h2>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</h2>
+            <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
           </div>
           <div className='MotionDiv Mobile'>
             <span></span>
@@ -66,7 +66,7 @@ export default function Cover() {
               {words[index]}
               </motion.div>
             </div>
-            <h2>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</h2>
+            <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
           </div>
         </div>
       </div>
@@ -120,10 +120,10 @@ export default function Cover() {
         {
           display: none;
         }
-        .MotionDiv h2
+        .MotionDiv p
         {
           text-align: center;
-          color: var(--tsc-color);
+          color: var(--cover-color);
         }
         .MotionContainer
         {
