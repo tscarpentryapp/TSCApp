@@ -33,6 +33,7 @@ const Form = () => {
         <div className="contact-container">
         <div className="section-title">
             <h2>Contact</h2>
+            <p>We stay in constant communication with our customers until the job is done. To get a quote, or if you have questions or special requests, send us an email.</p>
         </div>
         <div className="form-container">
             {isSubmitted ? (
@@ -66,6 +67,11 @@ const Form = () => {
                 <div className="inputBox">
                 <input name="Correo" type="email" required />
                 <span>Email</span>
+                <i></i>
+                </div>
+                <div className="inputBox">
+                <input name="Number" type="number" required />
+                <span>Phone number</span>
                 <i></i>
                 </div>
                 <div className="inputBox">

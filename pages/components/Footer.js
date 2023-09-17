@@ -9,7 +9,7 @@ export default function Footer() {
                     <i id="HeaderLogoFooter"></i>
                     <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
                     <h3>Contact</h3>
-                    <p>contact@wearevelier.com</p>
+                    <p>admin@tscarpentry.co</p>
                 </a>
                 <article>
                     <h3>Navigation</h3>
@@ -51,8 +51,9 @@ export default function Footer() {
                 height: 400px;
                 padding: 40px 100px;
                 justify-content: space-between;
-                background: var(--background-start-rgb);
                 gap: 40px;
+                color: #fff;
+                {/* background: var(--background-start-rgb); */}
             }
             article
             {

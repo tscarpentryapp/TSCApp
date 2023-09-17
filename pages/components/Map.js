@@ -20,13 +20,13 @@ export default function Map() {
                 border: none;
                 filter: var(--color-map);
             }
-            @media only screen and (max-width: 800px)
+            {/* @media only screen and (max-width: 800px)
             {
                 .Map
                 {
                     height: 200px;
                 }
-            }
+            } */}
         `}</style>
     </>
   );

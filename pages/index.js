@@ -4,7 +4,8 @@ import Footer from './components/Footer'
 import Cover from './components/Cover'
 import BackHeader from './components/BackHeader'
 import Form from './components/Form'
-import Map from './components/Map'
+// import Map from './components/Map'
+import GoogleMap from './components/GoogleMap'
 
 export default function Home() {
 
@@ -23,11 +24,15 @@ export default function Home() {
             <link rel="apple-touch-icon" href="/assets/iconApp.jpg"></link>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/assets/favicon.png" />
+            <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap" rel="stylesheet"></link>
         </Head>
         <Header />
         <BackHeader />
         <Cover />
-        <Map />
+        {/* <Map /> */}
+        <GoogleMap />
         <Form />
         <Footer />
         <style jsx>{`

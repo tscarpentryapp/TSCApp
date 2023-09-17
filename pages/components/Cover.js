@@ -17,7 +17,14 @@ export default function Cover() {
   return (
     <>
       <div id='inicio' className='CoverContainer'>
-        <img id='CoverRollerCoasterImage' src='/assets/roller-coaster-canva.png' />
+        <div className="CoverBackground">
+          <div id="VideoBackground">
+            <video autoPlay loop muted playsInline preload="auto">
+              <source src="/assets/video/tsc-cover.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        {/* <img id='CoverRollerCoasterImage' src='/assets/roller-coaster-canva.png' /> */}
         <div className='TitleCoverContainer'>
           {/* <span id='DesktopItemFull'></span> */}
           <div className='MotionDiv Desktop'>
@@ -77,15 +84,14 @@ export default function Cover() {
           display: flex;
           flex-direction: column;
           width: 100%;
-          height: 60vh;
-          min-height: 500px;
+          height: 600px;
           justify-content: end;
           align-items: center;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
-          background: #004ba6;
           background-image: linear-gradient(to top, var(--background-start-rgb), rgba(0, 0, 0, 0));
+          {/* background: #004ba6; */}
           {/* background-image: linear-gradient(var(--background-start-rgb), rgba(0, 0, 0, 0)), url(https://images.unsplash.com/photo-1677080946126-99bbc7b19747?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=80); */}
           {/* background-image: url(https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80); */}
           {/* background-image: url(https://images.unsplash.com/photo-1664575599736-c5197c684128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80); */}
@@ -136,6 +142,27 @@ export default function Cover() {
           width: 300%;
           max-width: 1600px;
           opacity: .4;
+        }
+        .CoverBackground {
+          position: absolute;
+          display: flex;
+          width: 100%;
+          height: 600px;
+        }
+        #VideoBackground {
+          top: 0px;
+          width: 100%;
+          height: 600px;
+          overflow: hidden;
+        }
+        #VideoBackground video {
+          width: 100%;
+          height: 600px;
+          object-fit: cover;
+          overflow: hidden;
+          {/* filter: grayscale(1); */}
+          transform: scale(1.2) translateX(3%) translateY(3%);
+          opacity: .5;
         }
         @media only screen and (max-width: 800px)
         {

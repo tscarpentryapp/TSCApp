@@ -46,7 +46,7 @@ export default function HeaderGeneral() {
                     </li>
                     <li>
                         {/* <a href="">Templates</a> */}
-                        <Link href="/about-us">About Us</Link>
+                        <Link href="/our-story">Our Story</Link>
                     </li>
                     <li>
                         {/* <a href="#contacto">Contacto</a> */}
@@ -54,7 +54,7 @@ export default function HeaderGeneral() {
                     </li>
                     <li>
                         {/* <a href="#contacto">Contacto</a> */}
-                        <Link href="/our-services">Our Services</Link>
+                        <Link href="/services">Services</Link>
                     </li>
                     <li>
                         {/* <a href="#contacto">Contacto</a> */}
@@ -97,8 +97,8 @@ export default function HeaderGeneral() {
                   )}
                 </li>
                 <li>
-                    <Link onClick={handleBurgerClick} href="/about-us">
-                      About Us
+                    <Link onClick={handleBurgerClick} href="/our-story">
+                      Our Story
                     </Link>
                 </li>
                 <li>
@@ -107,8 +107,8 @@ export default function HeaderGeneral() {
                     </Link>
                 </li>
                 <li>
-                    <Link onClick={handleBurgerClick} href="/our-services">
-                      Our Services
+                    <Link onClick={handleBurgerClick} href="/services">
+                      Services
                     </Link>
                 </li>
                 <li>
@@ -185,7 +185,7 @@ export default function HeaderGeneral() {
         #HeaderLogo,
         #HeaderLogoFooter
         {
-          width: 106px;
+          width: 66px;
           height: 50px;
           opacity: 1;
           background-position: center;
