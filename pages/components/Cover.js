@@ -16,7 +16,7 @@ export default function Cover() {
 
   return (
     <>
-      <div id='inicio' className='CoverContainer'>
+      <div id='home' className='CoverContainer'>
         <div className="CoverBackground">
           <div id="VideoBackground">
             <video autoPlay loop muted playsInline preload="auto">

@@ -24,7 +24,7 @@ export default function HeaderGeneral() {
       <nav className="NavContainer">
         <div ref={headerRef} className="NavFull">
           {isHomePage ? (
-            <a href="#inicio">
+            <a href="#home">
               <i ref={logoRef} id="HeaderLogo"></i>
             </a>
           ) : (
