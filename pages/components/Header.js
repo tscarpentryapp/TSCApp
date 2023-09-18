@@ -175,7 +175,7 @@ export default function HeaderGeneral() {
         }
         .NavFull.Open
         {
-          height: 474px;
+          height: 100svh;
         }
         .NavFull img {
           width: auto;

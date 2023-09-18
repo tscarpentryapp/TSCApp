@@ -36,12 +36,12 @@ export default function MeetTheTeam() {
             </div>
             <div className='TeamMemberContainer'>
               <div className='TeamMemberCard'>
-                <img id='ceo-image' src='/assets/ceo.jpg' />
+                {/* <img id='ceo-image' src='/assets/ceo.jpg' /> */}
                 <h2>Johny Acevedo</h2>
                 <p>Project Manager</p>
               </div>
               <div className='TeamMemberCard'>
-                <img id='ceo-image' src='/assets/ceo.jpg' />
+                {/* <img id='ceo-image' src='/assets/ceo.jpg' /> */}
                 <h2>Diego Acevedo</h2>
                 <p>Assistant Manager</p>
               </div>

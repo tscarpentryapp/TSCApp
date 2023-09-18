@@ -39,7 +39,7 @@ export default function Cover() {
                 style={{ 
                   fontSize: '6vw', 
                   fontFamily: 'Roboto', 
-                  fontWeight: '700',
+                  fontWeight: '900',
                   color: '#fff', 
                   marginTop: '-2vw', 
                   textShadow: '5px 5px 100px rgba(0, 0, 0, .4)',
@@ -63,7 +63,7 @@ export default function Cover() {
                 style={{ 
                   fontSize: '12vw', 
                   fontFamily: 'Roboto', 
-                  fontWeight: '700',
+                  fontWeight: '900',
                   color: '#fff', 
                   marginTop: '-2vw', 
                   textShadow: '5px 5px 100px rgba(0, 0, 0, .4)',
