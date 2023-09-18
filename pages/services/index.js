@@ -27,40 +27,37 @@ export default function Services() {
         <Header />
         <BackHeader />
         <div className='ServicesContainer'>
-          <h1>Services</h1>
+          <h1>Our Services</h1>
           <div className='ServicesContent'>
             <article className='ArticleContainer'>
               <div className='ArticleContent'>
-                <img src='/assets/images/image19.jpeg' />
+                <img id='imagen' src='/assets/images/image19.jpeg' />
                 <p>
-                  At Texas Skilled Carpentry, our expertise revolves around the world of wooden roller coasters. With over 25 years of dedicated experience, we have become industry leaders in the construction, repair, and maintenance of these iconic rides. Our team, led by the seasoned roller coaster carpenter Jose Luis Acevedo, is well-versed in every intricacy of wooden coaster craftsmanship. From understanding the unique properties of wood to mastering the art of precision engineering, we bring a wealth of knowledge to every project. Park owners and enthusiasts alike trust our expertise to ensure that their wooden roller coasters not only stand the test of time but continue to deliver unforgettable thrills year after year.
+                  When it comes to wooden rollercoaster repair and maintenance, Texas Skilled Carpentry stands as the unrivaled choice for park owners and enthusiasts seeking excellence, precision, and reliability. Our range of specialized services ensures that your wooden coaster not only operates at peak performance but also remains an enduring source of thrills and excitement for years to come. 
                 </p>
               </div>
             </article>
             <article className='ArticleContainer'>
-              <h2>Our Expertise</h2>
+              <h2>Repair & Restoration</h2>
               <div className='ArticleContent'>
-                <img src='/assets/images/image4.jpeg' />
                 <p>
-                  At Texas Skilled Carpentry, our expertise revolves around the world of wooden roller coasters. With over 25 years of dedicated experience, we have become industry leaders in the construction, repair, and maintenance of these iconic rides. Our team, led by the seasoned roller coaster carpenter Jose Luis Acevedo, is well-versed in every intricacy of wooden coaster craftsmanship. From understanding the unique properties of wood to mastering the art of precision engineering, we bring a wealth of knowledge to every project. Park owners and enthusiasts alike trust our expertise to ensure that their wooden roller coasters not only stand the test of time but continue to deliver unforgettable thrills year after year.
-                </p>
-              </div>
-            </article>
-            <article id='TextAlignRight' className='ArticleContainer'>
-              <h2>Our Process</h2>
-              <div id='RowReverse' className='ArticleContent'>
-                <img src='/assets/images/image17.jpeg' />
-                <p>
-                  At Texas Skilled Carpentry, our expertise revolves around the world of wooden roller coasters. With over 25 years of dedicated experience, we have become industry leaders in the construction, repair, and maintenance of these iconic rides. Our team, led by the seasoned roller coaster carpenter Jose Luis Acevedo, is well-versed in every intricacy of wooden coaster craftsmanship. From understanding the unique properties of wood to mastering the art of precision engineering, we bring a wealth of knowledge to every project. Park owners and enthusiasts alike trust our expertise to ensure that their wooden roller coasters not only stand the test of time but continue to deliver unforgettable thrills year after year.
+                  Reviving the Classics: Our expert craftsmen have a profound understanding of the heritage and history of wooden roller coasters. Whether it's restoring a classic coaster to its former glory or giving it a modern twist, we have the experience and skill to breathe new life into these iconic rides.
                 </p>
               </div>
             </article>
             <article className='ArticleContainer'>
-              <h2>Our Sustainability</h2>
+              <h2>Preventative Maintenance</h2>
               <div className='ArticleContent'>
-                <img src='/assets/images/image7.jpeg' />
                 <p>
-                  At Texas Skilled Carpentry, our expertise revolves around the world of wooden roller coasters. With over 25 years of dedicated experience, we have become industry leaders in the construction, repair, and maintenance of these iconic rides. Our team, led by the seasoned roller coaster carpenter Jose Luis Acevedo, is well-versed in every intricacy of wooden coaster craftsmanship. From understanding the unique properties of wood to mastering the art of precision engineering, we bring a wealth of knowledge to every project. Park owners and enthusiasts alike trust our expertise to ensure that their wooden roller coasters not only stand the test of time but continue to deliver unforgettable thrills year after year.
+                  Proactive Care: We believe that the best way to prevent costly and unexpected repairs is through diligent and regular maintenance. Our proactive approach ensures that your coaster remains safe and in top condition, reducing downtime and maximizing rider enjoyment. 
+                </p>
+              </div>
+            </article>
+            <article className='ArticleContainer'>
+              <h2>Structural Integrity</h2>
+              <div className='ArticleContent'>
+                <p>
+                  Sturdy Foundations: With a keen eye for structural integrity, our team thoroughly inspects every inch of your wooden coaster. From the foundation to the highest peak, we identify and address any issues, ensuring that safety remains our top priority. 
                 </p>
               </div>
             </article>
@@ -109,35 +106,19 @@ export default function Services() {
             justify-content: center;
             align-items: center;
           }
-          .ArticleContent img
+          #imagen
           {
-            width: 300px;
+            width: 100%;
             height: 300px;
             object-fit: cover;
             object-position: center;
             border-radius: 40px;
-            aspect-ratio: 1/1;
           }
           .ArticleContent p
           {
             display: flex;
             width: 100%;
             height: auto;
-          }
-          {/* #image
-          {
-            width: 100%;
-            height: auto;
-            max-width: 200px;
-            border-radius: 40px;
-          } */}
-          #RowReverse
-          {
-            flex-direction: row-reverse;
-          }
-          #TextAlignRight
-          {
-            text-align: right;
           }
           @media only screen and (max-width: 800px)
           {
@@ -147,21 +128,14 @@ export default function Services() {
               width: 100%;
               height: auto;
             }
-            .ArticleContent img
+            #imagen
             {
               width: 100%;
-              height: 260px;
+              height: auto;
               object-fit: cover;
-              object-position: top;
+              object-position: center;
               border-radius: 40px;
-            }
-            #RowReverse
-            {
-              flex-direction: column;
-            }
-            #TextAlignRight
-            {
-              text-align: left;
+              aspect-ratio: 1/1;
             }
           }
         `}</style>

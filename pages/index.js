@@ -31,12 +31,28 @@ export default function Home() {
         <Header />
         <BackHeader />
         <Cover />
+        <div className='CustomerFeedback'>
+          <h1>Customer Feedback</h1>
+        </div>
         {/* <Map /> */}
         <GoogleMap />
+        <div id='contact'></div>
         <Form />
         <Footer />
         <style jsx>{`
-
+          .CustomerFeedback
+          {
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+          }
+          .CustomerFeedback h1
+          {
+            text-align: center;
+          }
         `}</style>
     </>
   )

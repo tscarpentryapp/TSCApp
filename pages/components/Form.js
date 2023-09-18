@@ -31,11 +31,11 @@ const Form = () => {
   return (
     <>
         <div className="contact-container">
-        <div className="section-title">
-            <h2>Contact</h2>
-            <p>We stay in constant communication with our customers until the job is done. To get a quote, or if you have questions or special requests, send us an email.</p>
-        </div>
         <div className="form-container">
+            <div className="section-title">
+                <h2>Contact</h2>
+                <p>We stay in constant communication with our customers until the job is done. To get a quote, or if you have questions or special requests, send us an email.</p>
+            </div>
             {isSubmitted ? (
             <div id="submit-dma-confirm">
                 <div className="submit-dma-confirm-container">
@@ -107,10 +107,12 @@ const Form = () => {
             .form-container
             {
                 display: flex;
+                flex-direction: column;
                 width: 100%;
                 max-width: 1100px;
                 max-width: 765px;
                 height: auto;
+                gap: 20px;
             }
             #contact-form
             {

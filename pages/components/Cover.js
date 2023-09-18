@@ -28,7 +28,7 @@ export default function Cover() {
         <div className='TitleCoverContainer'>
           {/* <span id='DesktopItemFull'></span> */}
           <div className='MotionDiv Desktop'>
-            <span></span>
+            {/* <span></span> */}
             <div className='MotionContainer'>
               <motion.div
                 key={index}
@@ -52,7 +52,7 @@ export default function Cover() {
             <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
           </div>
           <div className='MotionDiv Mobile'>
-            <span></span>
+            {/* <span></span> */}
             <div className='MotionContainer'>
               <motion.div
                 key={index}
@@ -84,17 +84,13 @@ export default function Cover() {
           display: flex;
           flex-direction: column;
           width: 100%;
-          height: 600px;
+          height: 500px;
           justify-content: end;
           align-items: center;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
-          background-image: linear-gradient(to top, var(--background-start-rgb), rgba(0, 0, 0, 0));
-          {/* background: #004ba6; */}
-          {/* background-image: linear-gradient(var(--background-start-rgb), rgba(0, 0, 0, 0)), url(https://images.unsplash.com/photo-1677080946126-99bbc7b19747?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=80); */}
-          {/* background-image: url(https://images.unsplash.com/photo-1664575602554-2087b04935a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80); */}
-          {/* background-image: url(https://images.unsplash.com/photo-1664575599736-c5197c684128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80); */}
+          background-image: linear-gradient(to top, var(--tsc-color), rgba(0, 0, 0, 0));
         }
         .TitleCoverContainer
         {
@@ -119,7 +115,7 @@ export default function Cover() {
           flex-direction: column;
           width: 100%;
           height: 100%;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
         }
         .MotionDiv.Mobile
@@ -147,17 +143,17 @@ export default function Cover() {
           position: absolute;
           display: flex;
           width: 100%;
-          height: 600px;
+          height: 500px;
         }
         #VideoBackground {
           top: 0px;
           width: 100%;
-          height: 600px;
+          height: 500px;
           overflow: hidden;
         }
         #VideoBackground video {
           width: 100%;
-          height: 600px;
+          height: 500px;
           object-fit: cover;
           overflow: hidden;
           {/* filter: grayscale(1); */}

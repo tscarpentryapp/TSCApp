@@ -61,8 +61,7 @@ export default function HeaderGeneral() {
                         <Link href="/meet-the-team">Meet The Team</Link>
                     </li>
                     <li>
-                        {/* <a href="#contacto">Contacto</a> */}
-                        <Link href="/contact">Contact</Link>
+                        <a href="/#contact">Contact</a>
                     </li>
                 </ul>
               </div>
@@ -117,9 +116,9 @@ export default function HeaderGeneral() {
                     </Link>
                 </li>
                 <li>
-                    <Link onClick={handleBurgerClick} href="/contact">
-                      Contant
-                    </Link>
+                    <a onClick={handleBurgerClick} href="/#contact">
+                      Contact
+                    </a>
                 </li>
               </ul>
             </div>
