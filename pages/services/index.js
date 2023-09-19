@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import BackHeader from '../components/BackHeader'
+import { useState } from 'react';
+import Head from 'next/head';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import BackHeader from '../components/BackHeader';
 
 export default function Services() {
 
@@ -30,37 +31,25 @@ export default function Services() {
           <h1>Our Services</h1>
           <div className='ServicesContent'>
             <article className='ArticleContainer'>
-              <div className='ArticleContent'>
+              <div className='ArticleContentTop'>
                 <img id='imagen' src='/assets/images/image19.jpeg' />
                 <p>
                   When it comes to wooden rollercoaster repair and maintenance, Texas Skilled Carpentry stands as the unrivaled choice for park owners and enthusiasts seeking excellence, precision, and reliability. Our range of specialized services ensures that your wooden coaster not only operates at peak performance but also remains an enduring source of thrills and excitement for years to come. 
                 </p>
               </div>
             </article>
-            <article className='ArticleContainer'>
-              <h2>Repair & Restoration</h2>
-              <div className='ArticleContent'>
-                <p>
-                  Reviving the Classics: Our expert craftsmen have a profound understanding of the heritage and history of wooden roller coasters. Whether it's restoring a classic coaster to its former glory or giving it a modern twist, we have the experience and skill to breathe new life into these iconic rides.
-                </p>
-              </div>
-            </article>
-            <article className='ArticleContainer'>
-              <h2>Preventative Maintenance</h2>
-              <div className='ArticleContent'>
-                <p>
-                  Proactive Care: We believe that the best way to prevent costly and unexpected repairs is through diligent and regular maintenance. Our proactive approach ensures that your coaster remains safe and in top condition, reducing downtime and maximizing rider enjoyment. 
-                </p>
-              </div>
-            </article>
-            <article className='ArticleContainer'>
-              <h2>Structural Integrity</h2>
-              <div className='ArticleContent'>
-                <p>
-                  Sturdy Foundations: With a keen eye for structural integrity, our team thoroughly inspects every inch of your wooden coaster. From the foundation to the highest peak, we identify and address any issues, ensuring that safety remains our top priority. 
-                </p>
-              </div>
-            </article>
+            <ServiceItem
+              title='Repair & Restoration'
+              content='Reviving the Classics: Our expert craftsmen have a profound understanding of the heritage and history of wooden roller coasters. Whether its restoring a classic coaster to its former glory or giving it a modern twist, we have the experience and skill to breathe new life into these iconic rides.'
+            />
+            <ServiceItem
+              title='Preventative Maintenance'
+              content='Proactive Care: We believe that the best way to prevent costly and unexpected repairs is through diligent and regular maintenance. Our proactive approach ensures that your coaster remains safe and in top condition, reducing downtime and maximizing rider enjoyment.'
+            />
+            <ServiceItem
+              title='Structural Integrity'
+              content='Sturdy Foundations: With a keen eye for structural integrity, our team thoroughly inspects every inch of your wooden coaster. From the foundation to the highest peak, we identify and address any issues, ensuring that safety remains our top priority.'
+            />
           </div>
         </div>
         <Footer />
@@ -88,7 +77,8 @@ export default function Services() {
             justify-content: center;
             align-items: center;
           }
-          .ArticleContainer
+          .ArticleContainer,
+          .ArticleContainerAnimation
           {
             display: flex;
             flex-direction: column;
@@ -96,7 +86,16 @@ export default function Services() {
             height: auto;
             gap: 20px;
           }
-          .ArticleContent
+          .ArticleContainerAnimation
+          {
+            background: red;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 40px;
+          }
+          .ArticleContent,
+          .ArticleContentTop
           {
             display: flex;
             flex-direction: row;
@@ -113,16 +112,55 @@ export default function Services() {
             object-fit: cover;
             object-position: center;
             border-radius: 40px;
+            aspect-ratio: 16/9;
           }
-          .ArticleContent p
+          {/* .ArticleContent p
           {
             display: flex;
             width: 100%;
             height: auto;
-          }
+          } */}
+          .ArticleContent {
+          display: none;
+        }
+
+        .ArticleContent {
+          display: none;
+        }
+
+        .ArticleContainerAnimation h2 {
+          cursor: pointer;
+        }
+
+        .ArticleContainerAnimation.showContent .ArticleContent {
+          display: block;
+        }
+        .ServicesContainer {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          padding: 20px;
+          gap: 20px;
+          background: var(--background-start-rgb);
+          justify-content: center;
+          align-items: center;
+        }
+
+        .ServicesContent {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          max-width: 1000px;
+          height: auto;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+        }
           @media only screen and (max-width: 800px)
           {
-            .ArticleContent
+            .ArticleContent,
+            .ArticleContentTop
             {
               flex-direction: column;
               width: 100%;
@@ -135,10 +173,72 @@ export default function Services() {
               object-fit: cover;
               object-position: center;
               border-radius: 40px;
-              aspect-ratio: 1/1;
+              aspect-ratio: 16/9;
             }
           }
         `}</style>
     </>
   )
+}
+
+function ServiceItem({ title, content }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleContent = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <article onClick={toggleContent} className='ArticleContainerAnimation'>
+        <div className='TitleContainer'>
+          <h2>{title}</h2>
+          {!isOpen && (
+          <p>+</p>
+          )}
+          {isOpen && (
+          <p>-</p>
+          )}
+        </div>
+        {isOpen && (
+          <div className='ArticleContent'>
+            <p>{content}</p>
+          </div>
+        )}
+      </article>
+      <style jsx>{`
+        .ArticleContainerAnimation
+        {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: auto;
+          min-height: 120px;
+          padding: 46px;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+          background: var(--tsc-color);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          border-radius: 40px;
+          cursor: pointer;
+          {/* background-image: url('/assets/images/image1.jpeg'); */}
+        }
+        .TitleContainer
+        {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+        }
+        .TitleContainer p
+        {
+          font-size: 20px;
+        }
+      `}</style>
+    </>
+  );
 }
