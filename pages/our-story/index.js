@@ -41,7 +41,7 @@ export default function OurStory() {
             </p>
             <div className='FlexRow'>
               <img id='SecondImage' src='/assets/images/image14.jpeg' />
-              <p>
+              <p id='ColorWhite'>
                 At Texas Skilled Carpentry, crafting wooden roller coasters is not just our business; it's our family's legacy. Led by Jose Luis Acevedo and his sons, Johny and Diego Acevedo, our company is built on the foundation of family values and a shared passion for creating thrilling experiences. When you work with us, you're not just hiring professionals; you're joining a family dedicated to making coaster dreams come true. 
               </p>
             </div>

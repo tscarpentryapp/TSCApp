@@ -40,16 +40,19 @@ export default function Services() {
             </article>
             <ServiceItem
               id="repair"
+              image="image0.jpeg"
               title='Repair & Restoration'
               content='Reviving the Classics: Our expert craftsmen have a profound understanding of the heritage and history of wooden roller coasters. Whether its restoring a classic coaster to its former glory or giving it a modern twist, we have the experience and skill to breathe new life into these iconic rides.'
             />
             <ServiceItem
               id="maintenance"
+              image="image3.jpeg"
               title='Preventative Maintenance'
               content='Proactive Care: We believe that the best way to prevent costly and unexpected repairs is through diligent and regular maintenance. Our proactive approach ensures that your coaster remains safe and in top condition, reducing downtime and maximizing rider enjoyment.'
             />
             <ServiceItem
               id="integrity"
+              image="image18.jpeg"
               title='Structural Integrity'
               content='Sturdy Foundations: With a keen eye for structural integrity, our team thoroughly inspects every inch of your wooden coaster. From the foundation to the highest peak, we identify and address any issues, ensuring that safety remains our top priority.'
             />
@@ -184,7 +187,7 @@ export default function Services() {
   )
 }
 
-function ServiceItem({ title, content, id }) {
+function ServiceItem({ title, content, id, image }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleContent = () => {
@@ -194,20 +197,23 @@ function ServiceItem({ title, content, id }) {
   return (
     <>
       <article id={id} onClick={toggleContent} className='ArticleContainerAnimation'>
-        <div className='TitleContainer'>
-          <h2>{title}</h2>
-          {!isOpen && (
-          <p>+</p>
-          )}
+        <div className='ArticleContentContainer'>
+          <div className='TitleContainer'>
+            <h2>{title}</h2>
+            {!isOpen && (
+            <p>+</p>
+            )}
+            {isOpen && (
+            <p>-</p>
+            )}
+          </div>
           {isOpen && (
-          <p>-</p>
+            <div className='ArticleContent'>
+              <img src={`/assets/images/${image}`} />
+              <p>{content}</p>
+            </div>
           )}
         </div>
-        {isOpen && (
-          <div className='ArticleContent'>
-            <p>{content}</p>
-          </div>
-        )}
       </article>
       <style jsx>{`
         .ArticleContainerAnimation
@@ -217,17 +223,46 @@ function ServiceItem({ title, content, id }) {
           width: 100%;
           height: auto;
           min-height: 120px;
-          padding: 46px;
           gap: 20px;
           justify-content: center;
           align-items: center;
-          background: var(--tsc-color);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
           border-radius: 40px;
           cursor: pointer;
+          {/* background: var(--tsc-color); */}
           {/* background-image: url('/assets/images/image1.jpeg'); */}
+        }
+        .ArticleContentContainer
+        {
+          display: flex;
+          width: 100%;
+          height: auto;
+          flex-direction: column;
+          padding: 46px;
+          border-radius: 40px;
+          gap: 20px;
+          background: var(--background-start-rgb-op);
+        }
+        .ArticleContent
+        {
+          display: flex;
+          gap: 20px;
+        }
+        .ArticleContent p
+        {
+          width: 100%;
+          font-size: 20px;
+        }
+        .ArticleContent img
+        {
+          width: 20%;
+          min-width: 100px;
+          height: 14vw;
+          min-height: 100px;
+          object-fit: cover;
+          border-radius: 20px;
         }
         .TitleContainer
         {
@@ -240,6 +275,30 @@ function ServiceItem({ title, content, id }) {
         .TitleContainer p
         {
           font-size: 20px;
+        }
+        #integrity
+        {
+          background-image: url("/assets/images/image18.jpeg");
+        }
+        #maintenance
+        {
+          background-image: url("/assets/images/image3.jpeg");
+        }
+        #repair
+        {
+          background-image: url("/assets/images/image0.jpeg");
+        }
+        @media only screen and (max-width: 800px)
+        {
+          .ArticleContent img
+          {
+            width: 100%;
+            height: 200px;
+          }
+          .ArticleContent
+          {
+            flex-direction: column;
+          }
         }
       `}</style>
     </>

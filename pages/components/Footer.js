@@ -52,8 +52,7 @@ export default function Footer() {
                 padding: 40px 100px;
                 justify-content: space-between;
                 gap: 40px;
-                color: #fff;
-                {/* background: var(--background-start-rgb); */}
+                background: var(--background-start-rgb);
             }
             article
             {

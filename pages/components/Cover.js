@@ -49,7 +49,7 @@ export default function Cover() {
               {words[index]}
               </motion.div>
             </div>
-            <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
+            <p id='ColorWhite'>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
           </div>
           <div className='MotionDiv Mobile'>
             {/* <span></span> */}
@@ -73,7 +73,7 @@ export default function Cover() {
               {words[index]}
               </motion.div>
             </div>
-            <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
+            <p id='ColorWhite'>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
           </div>
         </div>
       </div>

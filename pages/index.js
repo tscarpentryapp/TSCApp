@@ -32,7 +32,7 @@ export default function Home() {
         <BackHeader />
         <Cover />
         <div className='CustomerFeedback'>
-          <h1>Customer Feedback</h1>
+          <h1 className='ColorWhite'>Customer Feedback</h1>
         </div>
         {/* <Map /> */}
         <GoogleMap />

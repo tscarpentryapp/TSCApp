@@ -2,9 +2,10 @@
   --max-width: 1100px;
   --border-radius: 20px;
 
+
   --foreground-rgb: rgb(62, 62, 62);
   --background-start-rgb: #ffffff;
-  --background-start-rgb-op: #ffffff18;
+  --background-start-rgb-op: #ffffffc7;
   --background-end-rgb: #ffffff;
   --background-contrast: #ffffff;
 
@@ -32,7 +33,7 @@
   :root {
     --foreground-rgb: #ffffff;
     --background-start-rgb: #1e1e1e;
-    --background-start-rgb-op: #1e1e1eba;
+    --background-start-rgb-op: #0000008f;
     --background-end-rgb: #1e1e1e;
     --background-contrast: #000000;
 
@@ -126,4 +127,10 @@ a {
   flex-direction: column;
   max-width: 350px;
   gap: 20px;
+}
+
+.ColorWhite,
+#ColorWhite
+{
+  color: #fff;
 }
