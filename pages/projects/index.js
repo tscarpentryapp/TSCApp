@@ -43,7 +43,7 @@ export default function Projects() {
               <div id='RowReverse' className='ArticleContent'>
                 <img src='/assets/images/image17.jpeg' />
                 <p>
-                  At Texas Skilled Carpentry, our expertise revolves around the world of wooden roller coasters. With over 25 years of dedicated experience, we have become industry leaders in the construction, repair, and maintenance of these iconic rides. Our team, led by the seasoned roller coaster carpenter Jose Luis Acevedo, is well-versed in every intricacy of wooden coaster craftsmanship. From understanding the unique properties of wood to mastering the art of precision engineering, we bring a wealth of knowledge to every project. Park owners and enthusiasts alike trust our expertise to ensure that their wooden roller coasters not only stand the test of time but continue to deliver unforgettable thrills year after year.
+                  When it comes to repairing and maintaining wooden roller coasters, our process is second to none. From the initial consultation to the final inspection, we follow a rigorous step-by-step approach that ensures excellence at every stage. We begin by conducting a comprehensive assessment, identifying any structural issues, wear and tear, or safety concerns. Our team then crafts a customized repair and maintenance plan tailored to the unique needs of each coaster. We execute these plans with precision, using the finest materials and craftsmanship. Finally, our thorough inspections guarantee that every coaster we touch meets the highest safety and performance standards. With Texas Skilled Carpentry, your wooden roller coaster is in expert hands from start to finish. 
                 </p>
               </div>
             </article>
@@ -52,7 +52,7 @@ export default function Projects() {
               <div className='ArticleContent'>
                 <img src='/assets/images/image7.jpeg' />
                 <p>
-                  At Texas Skilled Carpentry, our expertise revolves around the world of wooden roller coasters. With over 25 years of dedicated experience, we have become industry leaders in the construction, repair, and maintenance of these iconic rides. Our team, led by the seasoned roller coaster carpenter Jose Luis Acevedo, is well-versed in every intricacy of wooden coaster craftsmanship. From understanding the unique properties of wood to mastering the art of precision engineering, we bring a wealth of knowledge to every project. Park owners and enthusiasts alike trust our expertise to ensure that their wooden roller coasters not only stand the test of time but continue to deliver unforgettable thrills year after year.
+                  At Texas Skilled Carpentry, we're not just passionate about wooden roller coasters; we're committed to sustainable and eco-friendly construction practices. Our dedication to sustainability goes beyond the thrill of the ride – it's about protecting the environment for future generations. We use green building materials and techniques wherever possible, reducing our carbon footprint and minimizing the impact of our projects on the planet. By choosing us, you're not only ensuring the longevity and safety of your wooden coaster but also contributing to a greener, more sustainable world. Join us in our mission to make roller coasters an exhilarating and eco-conscious adventure. 
                 </p>
               </div>
             </article>

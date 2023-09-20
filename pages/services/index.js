@@ -39,14 +39,17 @@ export default function Services() {
               </div>
             </article>
             <ServiceItem
+              id="repair"
               title='Repair & Restoration'
               content='Reviving the Classics: Our expert craftsmen have a profound understanding of the heritage and history of wooden roller coasters. Whether its restoring a classic coaster to its former glory or giving it a modern twist, we have the experience and skill to breathe new life into these iconic rides.'
             />
             <ServiceItem
+              id="maintenance"
               title='Preventative Maintenance'
               content='Proactive Care: We believe that the best way to prevent costly and unexpected repairs is through diligent and regular maintenance. Our proactive approach ensures that your coaster remains safe and in top condition, reducing downtime and maximizing rider enjoyment.'
             />
             <ServiceItem
+              id="integrity"
               title='Structural Integrity'
               content='Sturdy Foundations: With a keen eye for structural integrity, our team thoroughly inspects every inch of your wooden coaster. From the foundation to the highest peak, we identify and address any issues, ensuring that safety remains our top priority.'
             />
@@ -181,7 +184,7 @@ export default function Services() {
   )
 }
 
-function ServiceItem({ title, content }) {
+function ServiceItem({ title, content, id }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleContent = () => {
@@ -190,7 +193,7 @@ function ServiceItem({ title, content }) {
 
   return (
     <>
-      <article onClick={toggleContent} className='ArticleContainerAnimation'>
+      <article id={id} onClick={toggleContent} className='ArticleContainerAnimation'>
         <div className='TitleContainer'>
           <h2>{title}</h2>
           {!isOpen && (
