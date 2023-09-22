@@ -6,6 +6,7 @@ import BackHeader from './components/BackHeader'
 import Form from './components/Form'
 // import Map from './components/Map'
 import GoogleMap from './components/GoogleMap'
+import Galeria from './components/Galery'
 
 export default function Home() {
 
@@ -31,6 +32,7 @@ export default function Home() {
         <Header />
         <BackHeader />
         <Cover />
+        <Galeria />
         <div className='CustomerFeedback'>
           <h1 className='ColorWhite'>Customer Feedback</h1>
         </div>
