@@ -8,6 +8,7 @@ import Form from './components/Form'
 import GoogleMap from './components/GoogleMap'
 import Galeria from './components/Galery'
 import GridGalery from './components/GridGalery'
+import ContactForm from './components/ContactForm'
 
 export default function Home() {
 
@@ -45,7 +46,7 @@ export default function Home() {
         {/* <Map /> */}
         <GoogleMap />
         <div id='contact'></div>
-        <Form />
+        <ContactForm />
         <Footer />
         <style jsx>{`
           .CustomerFeedback
