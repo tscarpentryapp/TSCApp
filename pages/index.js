@@ -7,6 +7,7 @@ import Form from './components/Form'
 // import Map from './components/Map'
 import GoogleMap from './components/GoogleMap'
 import Galeria from './components/Galery'
+import GridGalery from './components/GridGalery'
 
 export default function Home() {
 
@@ -32,7 +33,12 @@ export default function Home() {
         <Header />
         <BackHeader />
         <Cover />
-        <Galeria />
+        <div className='DesktopGalery'>
+          <GridGalery />
+        </div>
+        <div className='MobileGalery'>
+          <Galeria />
+        </div>
         <div className='CustomerFeedback'>
           <h1 className='ColorWhite'>Customer Feedback</h1>
         </div>
@@ -54,6 +60,25 @@ export default function Home() {
           .CustomerFeedback h1
           {
             text-align: center;
+          }
+          .DesktopGalery
+          {
+            display: flex;
+          }
+          .MobileGalery
+          {
+            display: none;
+          }
+          @media only screen and (max-width: 800px)
+          {
+            .DesktopGalery
+            {
+              display: none;
+            }
+            .MobileGalery
+            {
+              display: flex;
+            }
           }
         `}</style>
     </>

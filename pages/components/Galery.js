@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import SwipeableViews from "react-swipeable-views";
 
-// export default function Galeria({ imagenes }) {
 export default function Galeria() {
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
   const [imagenIndex, setImagenIndex] = useState(0);
@@ -40,16 +40,6 @@ export default function Galeria() {
     setImagenSeleccionada(null);
   };
 
-  const avanzarImagen = () => {
-    const siguienteIndex = (imagenIndex + 1) % imagenes.length;
-    setImagenIndex(siguienteIndex);
-  };
-
-  const retrocederImagen = () => {
-    const anteriorIndex = (imagenIndex - 1 + imagenes.length) % imagenes.length;
-    setImagenIndex(anteriorIndex);
-  };
-
   const mostrarMas = () => {
     setMostrarCantidad(mostrarCantidad + 4);
   };
@@ -59,120 +49,78 @@ export default function Galeria() {
     setImagenSeleccionada(null);
   };
 
-//   const descargarImagen = async () => {
-//     try {
-//       const imagenURL = imagenes[imagenIndex];
-//       const response = await fetch(imagenURL);
-//       const blob = await response.blob();
-//       const url = window.URL.createObjectURL(blob);
+  const avanzarImagen = () => {
+    // Avanza al siguiente índice, asegurándote de no exceder el límite superior
+    setImagenIndex((prevIndex) =>
+      prevIndex === imagenes.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-//       const link = document.createElement("a");
-//       link.href = url;
-//       link.download = `manantial-transformados${imagenIndex + 1}.jpg`;
-//       document.body.appendChild(link);
-//       link.click();
-//       document.body.removeChild(link);
+  const retrocederImagen = () => {
+    // Retrocede al índice anterior, asegurándote de no ser menor que 0
+    setImagenIndex((prevIndex) =>
+      prevIndex === 0 ? imagenes.length - 1 : prevIndex - 1
+    );
+  };
 
-//       window.URL.revokeObjectURL(url);
-//     } catch (error) {
-//       console.error("Error al descargar la imagen", error);
-//     }
-//   };
+  const handleChangeIndex = (index) => {
+    setImagenIndex(index);
+  };
 
   return (
+    <>
     <div className="GaleriaContainer">
-      <div className="galeria">
-        {imagenes.slice(0, mostrarCantidad).map((imagen, index) => (
-          <img
-            key={index}
-            src={imagen}
-            alt={`Imagen ${index}`}
-            onClick={() => seleccionarImagen(index)}
-          />
-        ))}
-      </div>
-      {imagenSeleccionada !== null && (
-        <div className="imagen-grande">
-          <span className="cerrar" onClick={cerrarImagen}>
-            &times;
-          </span>
-          <img
-            src={imagenes[imagenIndex]}
-            alt={`Imagen seleccionada ${imagenIndex}`}
-          />
-          <div className="BottomContainer">
-            <div className="FlechasContainer">
-              <span className="flecha izquierda" onClick={retrocederImagen}>
-                &#8249;
-              </span>
-              <span className="flecha derecha" onClick={avanzarImagen}>
-                &#8250;
-              </span>
-            </div>
-
-          </div>
+    <SwipeableViews
+      enableMouseEvents
+      index={imagenIndex}
+      onChangeIndex={handleChangeIndex}
+      className="slideshow-container"
+    >
+      {imagenes.map((imagen, index) => (
+        <div key={index} className="slide">
+          <img src={imagen} alt={`Imagen ${index}`} />
         </div>
-      )}
-      <div className="ButtonsContainer">
-      {mostrarCantidad < imagenes.length ? (
-        <button className="boton-mostrar" onClick={mostrarMas}>
-          See more
-        </button>
-      ) : (
-        <button className="boton-mostrar" onClick={mostrarMenos}>
-          See less
-        </button>
-      )}
-      </div>
-      <style jsx>
-        {`
-          .GaleriaContainer {
+      ))}
+    </SwipeableViews>
+    <a className="prev" onClick={retrocederImagen}>&#10094;</a> {/* Flecha izquierda */}
+    <a className="next" onClick={avanzarImagen}>&#10095;</a> {/* Flecha derecha */}
+    </div>
+        <style jsx>{`
+            .GaleriaContainer
+            {
+                position: relative;
+            }
+        /* Estilo para el contenedor del carrusel */
+            .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            }
+
+            /* Estilo para cada slide */
+            .slide {
             display: flex;
-            flex-direction: column;
-            text-align: center;
-            background: var(--dark-transparent);
-            {/* padding: 20px 20px 0; */}
-            {/* gap: 20px; */}
-          }
-          p {
-            font-size: 10px;
-          }
-          .galeria {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(150px, 1fr));
-            {/* gap: 20px; */}
-          }
-          .galeria img {
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            object-fit: cover;
-            {/* border-radius: 20px; */}
-            aspect-ratio: 1/1;
-          }
-          .imagen-grande {
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            background-color: var(--dark-transparent);
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(20px);
-          }
-          .imagen-grande img {
-            width: fit-content;
-            max-width: 90%;
-            height: fit-content;
-            max-height: 60%;
-            object-fit: contain;
-            {/* border-radius: 20px; */}
-          }
-          .BottomContainer {
+            height: 360px; /* Ajusta la altura según tus preferencias */
+            transition: transform 0.3s ease; /* Agrega una animación suave al deslizar */
+            }
+
+            /* Estilo para las imágenes dentro de los slides */
+            .slide img {
+                width: 100%;
+                object-fit: cover; /* Ajusta el modo de ajuste de la imagen según tus preferencias */
+            {/* max-width: 100%; */}
+            {/* max-height: 100%; */}
+            }
+
+            /* Estilo para la imagen activa */
+            .active {
+            display: flex;
+            }
+
+            .BottomContainer {
             position: absolute;
             bottom: 20px;
             display: flex;
@@ -198,13 +146,6 @@ export default function Galeria() {
             border-radius: 20px;
             padding-bottom: 6px;
             cursor: pointer;
-             {
-              /* position: relative;
-            top: 50%; */
-            }
-             {
-              /* transform: translateY(-50%); */
-            }
           }
           .izquierda {
             left: 20px;
@@ -212,65 +153,36 @@ export default function Galeria() {
           .derecha {
             right: 20px;
           }
-          .cerrar {
+
+            .prev,
+            .next {
             position: absolute;
-            z-index: 99999999999999;
-            top: 84px;
-            right: 20px;
-            font-size: 50px;
-            color: #fff;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
             cursor: pointer;
-          }
-          .ButtonsContainer
-          {
-            width: 100%;
-            height: auto;
-            padding: 20px 20px 0;
-          }
-          .boton-mostrar {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 60px;
-            border: none;
-            border-radius: 20px;
-            padding: 10px;
-            cursor: pointer;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            font-weight: 700;
-            background-color: #fff;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.5);
             color: var(--tsc-color);
-          }
-          .descargar-boton {
-            bottom: 120px;
-            width: 100%;
-            height: 60px;
-            border: none;
-            border-radius: 20px;
             padding: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 700;
-            background-color: var(--mid-grey);
-            color: var(--secondary-color);
-             {
-              /* position: absolute; */
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
             }
-             {
-              /* margin-top: 10px; */
+
+            .prev:hover,
+            .next:hover {
+            background-color: rgba(255, 255, 255, 0.8);
             }
-          }
-          @media only screen and (max-width: 860px) {
-            .galeria {
-              display: grid;
-              grid-template-columns: repeat(2, minmax(150px, 1fr));
-              {/* gap: 20px; */}
-            }
-          }
-        `}
-      </style>
-    </div>
+
+.prev {
+  left: 10px; /* Ajusta la posición horizontal de la flecha de retroceso */
+}
+
+.next {
+  right: 10px; /* Ajusta la posición horizontal de la flecha de avance */
+}
+
+        `}</style>
+    </>
   );
 }
