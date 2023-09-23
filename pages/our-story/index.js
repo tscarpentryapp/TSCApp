@@ -29,7 +29,7 @@ export default function OurStory() {
         <div className='AboutUsContainer'>
           <h1>Our Story</h1>
           <div className='AboutUsContent'>
-            <img id='ceo-image' src='/assets/ceo.jpg' />
+            <img id='ceo-image' src='/assets/images/image10.jpeg' />
             <p>
               <strong id='tsc-color'>Jose Luis Acevedo,</strong> the driving force behind Texas Skilled Carpentry, is a seasoned roller coaster carpenter whose passion for crafting thrilling wooden rides has been a lifelong journey. From his early days immersed in construction, he has honed his craft and transformed his childhood fascination into a successful career. With 17 years of dedicated service at CCI, he nurtured his skills and embraced his Hispanic heritage, finding a profound connection with woodwork.
             </p>
@@ -78,6 +78,8 @@ export default function OurStory() {
             height: auto;
             max-width: 200px;
             border-radius: 50%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
           }
           #tsc-color
           {
