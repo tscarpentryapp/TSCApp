@@ -1,9 +1,51 @@
+import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("xeqbzlby");
+  const [state, handleSubmit] = useForm("xyyqnvyq");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return (
+        <>
+        <div className='contact-container'>
+            <div className='form-container'>
+                <h2>Message sent!</h2>
+                <p>Thank you for contacting us, we will contact you soon.</p>
+            </div>
+        </div>
+        <style jsx>{`
+            .contact-container
+            {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                padding: 20px 20px 40px;
+                align-self: center;
+                justify-content: center;
+                align-items: center;
+                background: var(--tsc-color);
+                gap: 20px;
+                color: #fff;
+            }
+            .form-container
+            {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 1100px;
+                max-width: 765px;
+                height: auto;
+                gap: 10px;
+                text-align: center;
+            }
+            h2
+            {
+                padding: 20px;
+            }
+        `}</style>
+        </>
+      ) 
   }
+
   return (
     <>
       <div>
@@ -13,48 +55,76 @@ export default function ContactForm() {
                 <h2>Contact</h2>
                 <p>We stay in constant communication with our customers until the job is done. To get a quote, or if you have questions or special requests, send us an email.</p>
             </div>
-            <form
-                id="contact-form"
-                onSubmit={handleSubmit}
-                action="https://formspree.io/f/mlekgork"
-                method="POST"
-            >
-                <div className="inputBox">
-                <input name="Nombre" type="text" required />
-                <span>Name</span>
-                <i></i>
+            <form id="contact-form" onSubmit={handleSubmit}>
+                <div className='inputBox'>
+                    <label htmlFor="name">
+                        Name
+                    </label>
+                    <input
+                        id="name"
+                        type="name" 
+                        name="name"
+                    />
+                    <ValidationError 
+                        prefix="Name" 
+                        field="name"
+                        errors={state.errors}
+                    />
                 </div>
-                <div className="inputBox">
-                <input name="Empresa" type="text" required />
-                <span>Subject</span>
-                <i></i>
+                <div className='inputBox'>
+                    <label htmlFor="email">
+                        Email
+                    </label>
+                    <input
+                        id="email"
+                        type="email" 
+                        name="email"
+                    />
+                    <ValidationError 
+                        prefix="Email" 
+                        field="email"
+                        errors={state.errors}
+                    />
                 </div>
-                <div className="inputBox">
-                <input name="Correo" type="email" required />
-                <span>Email</span>
-                <i></i>
+                <div className='inputBox'>
+                    <label htmlFor="number">
+                        Phone number
+                    </label>
+                    <input
+                        id="number"
+                        type="number" 
+                        name="number"
+                    />
+                    <ValidationError 
+                        prefix="Number" 
+                        field="number"
+                        errors={state.errors}
+                    />
                 </div>
-                <div className="inputBox">
-                <input name="Number" type="number" required />
-                <span>Phone number</span>
-                <i></i>
+                <div className='inputBox'>
+                    <label htmlFor="email">
+                        Message
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                    />
+                    <ValidationError 
+                        prefix="Message" 
+                        field="message"
+                        errors={state.errors}
+                    />
                 </div>
-                <div className="inputBox">
-                <textarea name="Mensaje" required></textarea>
-                <span>Message</span>
-                <i></i>
-                </div>
-                <div className="g-recaptcha" data-theme="dark" data-sitekey="6Le-ZUIkAAAAADVtPZJIn-UH1PIyTqCXUtERPpHv"></div>
-                <div className="buttons-form">
-                <input id="button-form" type="submit" value="Send" />
-                <input id="button-form2" type="reset" value="Clear form" />
-                </div>
-            </form>
-          </div>
+                <button id='button-form' type="submit" disabled={state.submitting}>
+                    Submit
+                </button>
+                </form>
+            </div>
         </div>
       </div>
       <style jsx>{`
-            .contact-container
+            .contact-container,
+            .contact-container2
             {
                 display: flex;
                 flex-direction: column;
@@ -69,7 +139,8 @@ export default function ContactForm() {
                 gap: 20px;
                 color: #fff;
             }
-            .form-container
+            .form-container,
+            .form-container2
             {
                 display: flex;
                 flex-direction: column;
@@ -97,6 +168,7 @@ export default function ContactForm() {
                 position: relative;
                 display: flex;
                 flex-direction: column;
+                gap: 10px;
             }
             .inputBox input
             {
@@ -105,7 +177,6 @@ export default function ContactForm() {
                 width: 100%;
                 height: 60px;
                 padding: 0 20px;
-                background: transparent;
                 /* border: 2px solid var(--white); */
                 border: none;
                 border-radius: 20px;
@@ -120,7 +191,6 @@ export default function ContactForm() {
                 width: 100%;
                 height: 120px;
                 padding: 20px;
-                background: transparent;
                 border: none;
                 border-radius: 20px;
                 outline: none;
@@ -129,67 +199,22 @@ export default function ContactForm() {
                 font-size: 20px;
                 resize: none;
             }
-            .inputBox span
-            {
-                position: absolute;
-                left: 0;
-                margin-left: 8px;
-                margin-top: 2px;
-                padding: 10px 14px 10px 6px;
-                font-size: 20px;
-                font-weight: 700;
-                font-family: 'Roboto', sans-serif;
-                color: var(--grey1);
-                pointer-events: none;
-                transition: 0.4s;
-                z-index: 4;
-            }
-            .inputBox input:valid ~ span,
-            .inputBox input:focus ~ span,
-            .inputBox textarea:valid ~ span,
-            .inputBox textarea:focus ~ span
-            {
-                color: #fff;
-                font-size: 12px;
-                padding: 10px 6px 10px 6px;
-                transform: translateY(-30px);
-            }
-            .inputBox i
-            {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 2px;
-                background-color: #fff;
-                border-radius: 10px;
-                transition: 0.4s;
-                pointer-events: none;
-                z-index: 5;
-            }
-            .inputBox input:valid ~ i,
-            .inputBox input:focus ~ i,
-            .inputBox textarea:valid ~ i,
-            .inputBox textarea:focus ~ i
-            {
-                height: 100%;
-            }
             .buttons-form
             {
                 display: flex;
                 gap: 20px;
             }
-            .buttons-form input[type="submit"]
+            #button-form
             {
                 display: flex;
                 width: 100%;
                 min-width: 64px;
                 height: 60px;
                 border: none;
-                border-radius: 10px !important;
+                border-radius: 20px !important;
                 background: white;
                 font-family: 'Roboto', sans-serif;
-                font-size: 14px;
+                font-size: 20px;
                 color: black;
                 font-weight: 700;
                 text-decoration: none;
@@ -209,6 +234,11 @@ export default function ContactForm() {
                 color: var(--white);
                 border: 2px solid var(--white);
                 border-radius: 8px;
+            }
+            .SubmitContainer
+            {
+                display: flex;
+                flex-direction: column;
             }
 
             #submit-dma-confirm
