@@ -15,11 +15,11 @@ export default function Footer() {
                     <h3>Navigation</h3>
                     <ul>
                         <li><Link href="/">Home</Link></li>
-                        <li><Link href="/about-us">About Us</Link></li>
+                        <li><Link href="/our-story">Our Story</Link></li>
                         <li><Link href="/projects">Projects</Link></li>
-                        <li><Link href="/our-services">Our Services</Link></li>
+                        <li><Link href="/services">Services</Link></li>
                         <li><Link href="/meet-the-team">Meet The Team</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
+                        <li><Link href="/#contact">Contact</Link></li>
                     </ul>
                 </article>
                 {/* <article>

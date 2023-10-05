@@ -20,7 +20,8 @@ function initMap() {
     ['Waldameer And Water World (Erie, Pennsylvania)', 42.1096702, -80.1561363, 5],
     ['Adventureland (Altoona, Iowa)', 41.6506670, -93.5031207, 3],
     ['Alabama Adventure & Splash Adventure (Alabama)', 33.3792194, -86.9968425, 2],
-    ['Funtown Splashtown, Maine', 43.5301831, -70.4304971, 1]
+    ['Funtown Splashtown, (Maine)', 43.5301831, -70.4304971, 1],
+    ['Seabreeze Amusement Park, (Rochester, Nueva York)', 43.229411, -77.543473, 6]
   ];
 
   const map = new window.google.maps.Map(document.getElementById('map'), {

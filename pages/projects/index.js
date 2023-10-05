@@ -47,15 +47,6 @@ export default function Projects() {
                 </p>
               </div>
             </article>
-            <article className='ArticleContainer'>
-              <h2>Our Sustainability</h2>
-              <div className='ArticleContent'>
-                <img src='/assets/images/image7.jpeg' />
-                <p>
-                  At Texas Skilled Carpentry, we're not just passionate about wooden roller coasters; we're committed to sustainable and eco-friendly construction practices. Our dedication to sustainability goes beyond the thrill of the ride – it's about protecting the environment for future generations. We use green building materials and techniques wherever possible, reducing our carbon footprint and minimizing the impact of our projects on the planet. By choosing us, you're not only ensuring the longevity and safety of your wooden coaster but also contributing to a greener, more sustainable world. Join us in our mission to make roller coasters an exhilarating and eco-conscious adventure. 
-                </p>
-              </div>
-            </article>
           </div>
         </div>
         <Footer />

@@ -182,6 +182,7 @@ export default function ContactForm() {
                 border-radius: 20px;
                 outline: none;
                 color: var(--tsc-color);
+                background: #fff;
                 font-size: 20px;
             }
             .inputBox textarea
@@ -195,6 +196,7 @@ export default function ContactForm() {
                 border-radius: 20px;
                 outline: none;
                 color: var(--tsc-color);
+                background: #fff;
                 font-family: 'Roboto', sans-serif;
                 font-size: 20px;
                 resize: none;
