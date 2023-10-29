@@ -32,7 +32,7 @@ export default function MeetTheTeam() {
             <div className='TeamMemberCard'>
               <img id='ceo-image' src='/assets/ceo_2.jpg' />
               <h2>Jose Luis Acevedo</h2>
-              <p>Owner</p>
+              <p>Business Owner</p>
             </div>
             <div className='TeamMemberContainer'>
               <div className='TeamMemberCard'>
