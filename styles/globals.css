@@ -9,8 +9,9 @@
   --background-end-rgb: #ffffff;
   --background-contrast: #ffffff;
 
-  --tsc-color: #004ba6;
-  --cover-color: #004ba6;
+  --tsc-new-color: #0073ff;
+  --tsc-color: #0073ff;
+  --cover-color: #0073ff;
   --velier-color: rgb(0, 101, 255); 
   --grey-color: #e6e6e67c;
   --grey-full: #e6e6e6;
@@ -67,14 +68,14 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: #004ba6;
+  background-color: #0073ff;
   /* background: var(--background-start-rgb); */
 }
 
 body {
   font-family: 'Inter', sans-serif;
   color: var(--foreground-rgb);
-  background-color: #004ba6;
+  background-color: #0073ff;
   /* background: var(--background-start-rgb); */
 }
 

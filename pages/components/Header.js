@@ -166,7 +166,7 @@ export default function HeaderGeneral() {
           justify-content: space-between;
           align-items: center;
           padding: 0 30px;
-          background: #004ba6;
+          background: #0073ff;
           backdrop-filter: blur(100px);
           transition: all 0.2s ease-in-out;
           overflow: hidden;
