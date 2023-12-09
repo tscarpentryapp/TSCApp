@@ -9,7 +9,7 @@ export default function Footer() {
                     <i id="HeaderLogoFooter"></i>
                     <p>We craft top quality wooden roller coasters with 25+ years of expertise and a commitment to sustainability.</p>
                     <h3>Contact</h3>
-                    <p>txskilledllc@gmail.com<p>
+                    <p>txskilledllc@gmail.com</p>
                     <p>admin@tscarpentry.co</p>
                 </a>
                 <article>
