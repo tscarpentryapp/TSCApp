@@ -51,7 +51,7 @@ function initMap() {
 
 export default function Map() {
   useEffect(() => {
-    loadGoogleMapsScript('AIzaSyBN-7bCv17Bf9_KO47_VitgN_Iqr28g7g4', initMap);
+    loadGoogleMapsScript('AIzaSyA3cMZAk_egY7CXoEFh_2XBvk-3NWs_uFU', initMap);
   }, []);
 
   return (
