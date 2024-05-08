@@ -44,7 +44,7 @@ export default function Home() {
           <h1 className='ColorWhite'>Customer Feedback</h1>
         </div>
         {/* <Map /> */}
-        <GoogleMap />
+        {/* <GoogleMap /> */}
         <div id='contact'></div>
         <ContactForm />
         <Footer />
